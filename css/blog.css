@@ -1,0 +1,97 @@
+.sideSearch,
+#sidebarSearch button {
+    outline: none !important;
+    border: none !important;
+}
+
+.blogButton div:last-child span {
+    padding: 0 1.5rem 0 0.5rem;
+}
+
+.blogBtn {
+    position: relative;
+}
+
+.blogBtn a {
+    position: relative;
+    margin-left: 2%;
+    margin-top: 5%;
+    font-size: 1.2rem;
+}
+
+.vinawineAbout {
+    padding-top: 20rem;
+    margin-bottom: 5rem;
+    background: url('../img/bg-5.jpg') no-repeat;
+    background-size: 100% auto;
+    background-position: top;
+}
+
+.historyUs {
+    padding: 2rem 5rem;
+    background-color: #c0aa59;
+    box-shadow: 5px 5px 10px #000;
+    box-shadow: 5;
+    padding-bottom: 20%;
+}
+
+.videoUs {
+    margin-top: 20%;
+}
+
+.aminateLogo {
+    padding: 2rem 0;
+    animation-name: logoBg;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.aminateLogo img {
+    width: 15%;
+    position: relative;
+    animation-name: logoAbout;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes logoBg {
+    from {
+        background-color: #574a4c;
+    }
+
+    to {
+        background-color: #bbb;
+    }
+}
+
+@keyframes logoAbout {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 85%;
+    }
+}
+
+.infoContact>div:hover span {
+    color: #a53c49;
+}
+
+.infoContact>div:hover {
+    background-color: #ccc3c3 !important;
+}
+
+.infoContact>div {
+    padding: 5rem 0;
+}
+
+.infoContact span {
+    display: block;
+    font-family: 'philosopher', sans-serif;
+    font-size: 16px;
+}

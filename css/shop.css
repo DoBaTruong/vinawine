@@ -1,0 +1,266 @@
+#drawRange {
+    background-color: #f4f6f9;
+    height: 5px !important;
+}
+
+.ui-slider-horizontal .ui-slider-range,
+.ui-slider .ui-slider-handle {
+    background-color: #a53e4c;
+}
+
+.ui-slider .ui-slider-handle {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.20);
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    outline: 0;
+}
+
+#rangeFilter .showRange {
+    padding: 0.3rem 0;
+    font-size: 1rem;
+    color: #2b2a2a;
+}
+
+#amount {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1rem;
+    color: #a53e4c;
+    width: 100%;
+    outline: none;
+    margin-left: 5%;
+}
+
+#rangeFilter .btnFilter {
+    padding: 0 1.5rem;
+    border: 1px solid #a53e4c;
+    border-radius: 0.75rem;
+    height: 1.5rem;
+    outline: none;
+}
+
+#rangeFilter .btnFilter:hover {
+    background-color: #a53e4c;
+    color: #fff;
+}
+
+.catFilterMenu li {
+    position: relative;
+    line-height: 30px;
+}
+
+.catFilterMenu a {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 95%;
+}
+
+.catFilterMenu li div,
+.catFilterMenu li i,
+.catMenuSub li a:hover i {
+    font-family: 'philosopher', sans-serif;
+    font-size: 16px !important;
+}
+
+.catMenuSub li div,
+.catMenuSub li i {
+    font-size: 13px !important;
+}
+
+.catFilterMenu>li {
+    border-top: 1px dashed #d5d4d4;
+}
+
+.catMenuSub {
+    display: none;
+}
+
+.catFilterMenu li:hover .catMenuSub {
+    display: block;
+}
+
+.catFilterMenu li a:hover div,
+.catFilterMenu li a:hover i {
+    color: #a53e4c;
+    font-size: 20px !important;
+}
+
+#prdHot .card {
+    position: relative;
+}
+
+#prdHot .card img {
+    position: relative;
+    margin: 25%;
+    height: 100%;
+}
+
+#prdHot a div:last-child {
+    padding-top: 20%;
+}
+
+#prdHot a:hover img {
+    transform: scale(1.2);
+}
+
+#prdHot a:hover div:last-child {
+    background-color: #d3c5c5;
+    color: #fff;
+}
+
+#prdTags a {
+    border: 1px dashed #790730;
+    padding: 0.2rem 0.2rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.3rem;
+    display: inline-block;
+}
+
+.sortOption {
+    height: 32px;
+    line-height: 30px;
+    border: 1px solid #d4d4d5;
+    border-radius: 5px;
+    color: #a53e4c;
+    padding: 0 2rem;
+    text-align: center;
+    font-family: 'philosopher', sans-serif;
+    font-size: 13px;
+}
+
+.listGrid a {
+    font-size: 20px;
+    color: #222;
+    padding: 0.2rem 0.5rem;
+}
+
+#showProduct .prdItem {
+    width: 100%;
+    margin-top: 2% !important;
+    border: none;
+    position: relative;
+}
+
+#showProduct .bg-img {
+    padding: 2rem 0;
+    width: 30%;
+    border-radius: 5px;
+}
+
+#showProduct .prdInfo {
+    width: 68%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    right: 0;
+}
+
+#showProduct .prdOrder,
+.blogButton,
+.btnCart {
+    height: max-content;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#showProduct .btnProItem {
+    width: max-content;
+    padding: 0.8rem 1rem;
+    margin-right: 1rem;
+    border-radius: 5px;
+    line-height: 16px;
+    background-color: #f4f6f9;
+}
+
+#showProduct .btnProItem span {
+    margin-left: 1rem;
+    border-left: 1px solid #d5d4d4;
+    padding-left: 0.7rem;
+    font-size: 13px;
+}
+
+.grids {
+    position: relative !important;
+    width: 30% !important;
+}
+
+.grids .bg-img,
+.grids .prdInfo,
+.grids .prdOrder {
+    width: 100% !important;
+    position: relative !important;
+}
+
+.grids .prdInfo {
+    margin-top: 15px;
+}
+
+.grids .prdDetails {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 50px !important;
+}
+
+.grids .btnProItem {
+    margin: 0 !important;
+    position: relative;
+    height: auto;
+    line-height: 16px !important;
+    padding: 0.8rem 0.8rem !important;
+}
+
+.grids .btnProItem:nth-child(2) {
+    margin: 0 0.3rem !important;
+}
+
+.quantity {
+    width: 60px;
+    border: none;
+    border-top: 1px solid #a53e4c;
+    border-bottom: 1px solid #a53e4c;
+}
+
+.btnProQty button,
+.btnProQty div {
+    padding: 0 10px;
+    outline: none;
+    border: 2px solid #a53e4c;
+    line-height: 35px;
+}
+
+#navaddComment {
+    margin-left: 2%;
+}
+
+.tabLink {
+    transform: translateY(1px);
+}
+
+#addComment {
+    position: relative;
+    top: -7rem;
+}
+
+.nameFeadback {
+    margin: 5rem 0 2rem;
+}
+
+.submitFeedback {
+    padding: 1rem 3rem;
+    margin-bottom: 5%;
+    font-family: 'philosopher', sans-serif;
+    border-radius: 0.7rem;
+    color: #fff;
+    font-size: 16px;
+    background-color: #1d17df;
+    border: none;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.rounded-top {
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+}
