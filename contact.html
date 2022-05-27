@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VinaWine | Liên hệ</title>
+
+    <!-- Links Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Charmonman&family=Philosopher:wght@400;700&family=Poppins:wght@100;400;700&display=swap" />
+
+    <!-- Links CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" href="admin/css/bootstrap-table.css">
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/shop.css" />
+    <link rel="stylesheet" href="css/blog.css" />
+
+    <!-- Links Javascript -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header" class="bg-front">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-12">
+                    <div id="logo">
+                        <a href="#">
+                            <img src="img/logo.png" alt="LogoVinaWine" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div id="menu">
+                        <ul class="liHide d-flex justify-content-end">
+                            <li class="menu-item"><a class="buttonNav" href="#">Trang chủ</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Cửa hàng</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Bài viết</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Về chúng tôi</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Liên hệ</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Hỏi đáp</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-12 p-0 d-flex justify-content-end">
+                    <div id="searchBox" class="w-50 text-center">
+                        <form action="#" method="post">
+                            <span onclick="clickShow()">
+                                <i class="text-body buttonHover fa fa-search"></i>
+                                <script>
+                                    function clickShow() {
+                                        var x = document.getElementById('searchAct').style.visibility = 'visible';
+                                    }
+                                </script>
+                            </span>
+                            <div id="searchAct" class="d-flex justify-content-end">
+                                <input class="form-control" type="search" name="keyword" placeholder="Tìm kiếm....." />
+                                <button class="btn ml-2" type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="cartNotify" class="w-50 text-center">
+                        <a href="#" class="text-body buttonHover"><i class="fa fa-shopping-cart"></i>
+                            <span>1</span></a>
+                        <div class="cartNew bg-white p-3">
+                            <h5 class="philosopher text-justify">Giỏ hàng của bạn:</h5>
+                            <hr />
+                            <table>
+                                <tr class="border-bottom">
+                                    <td class="text-justify">Vescovo Pinot Grigio</td>
+                                    <td><img src="img/product-1.png" alt="VinaWine-Cart" class="w-50" /></td>
+                                    <td>x 2</td>
+                                    <td>
+                                        200,000 vnd
+                                        <span class="btn bg-white d-block border philosopher buttonHover">xóa</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-0 pt-3"><a href="#" class="btn-primary">Xem giỏ hàng</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="textHeader text-center w-100 mt-10">
+                    <h2 class="philosopher text-body">VINAWINE STORE</h2>
+                </div>
+                <ol class="breadcrumb d-flex justify-content-center bg-transparent w-100">
+                    <li class="breadcrumb-item"><a href="#" class="textHeader">Trang chủ</a></li>
+                    <li class="breadcrumb-item textHeader philosopher active" aria-current="page"
+                        style="color: #beb7b7 !important;">Liên hệ</li>
+                </ol>
+            </div>
+            <div class="bgHeader">
+                <img src="img/bg-3.png" alt="VinaWINE Background" class="h-100 w-100">
+            </div>
+        </div>
+    </div>
+    <!-- Main -->
+    <div id="main" class="mtb-100">
+        <div class="container">
+            <div class="row p-0 text-center infoContact">
+                <div class="col-3">
+                    <span><i class="fas fa-phone-alt"></i></span>
+                    <span>0988 041 615</span>
+                </div>
+                <div class="col-3">
+                    <span><i class="fas fa-map-marker-alt"></i></span>
+                    <span>Dan Tao, Tan Minh, Soc Son, Ha Noi</span>
+                </div>
+                <div class="col-3">
+                    <span><i class="fas fa-envelope"></i></span>
+                    <span>Dobatruongbk48@gmail.com</span>
+                </div>
+                <div class="col-3">
+                    <span><i class="fas fa-clock"></i></span>
+                    <span>Thu 2 - Thu 7, 80:00 - 19:00</span>
+                </div>
+            </div>
+            <div class="row p-0 mtb-100">
+                <div class="col-lg-6 col-md-6 col-sm-12 text-center questionUs">
+                    <h4 class="charmonman">Have a Question?</h4>
+                    <h3 class="text-dark philosopher">GET IN TOUCH</h3>
+                    <div class="d-flex justify-content-center mt-4 mb-5">
+                        <div class="w-10 border-bottom"></div>
+                        <div class="starLine d-flex justify-content-center">
+                            <i class="fas fa-star"></i>
+                            <span><i class="fas fa-star"></i></span>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="w-10 border-bottom"></div>
+                    </div>
+                    <form>
+                        <textarea name="contentQuestion" cols="30"></textarea>
+                        <script>
+                            CKEDITOR.replace('contentQuestion');
+                        </script>
+                        <div class="form-row mt-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="*Name" />
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="*Mobile" />
+                            </div>
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="*Email" />
+                            </div>
+                        </div>
+                        <input class="btn text-pink w-100 mt-10 p-3 submitContact border-0 philosopher" type="submit"
+                            value="SEND MESSAGE" />
+                    </form>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <iframe class="w-100 h-100"
+                        src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3725.1501422969095!2d105.85136861488266!3d20.986617786021224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3135ac1521e6aaab%3A0x809e14beba0f439!2zVklOQVdJTkQsIDE2NCBOZ3V54buFbiDEkOG7qWMgQ-G6o25oLCBUxrDGoW5nIE1haSwgSG_DoG5nIE1haSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!3m2!1d20.9865507!2d105.85396039999999!5e0!3m2!1svi!2s!4v1613376380130!5m2!1svi!2s"
+                        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div id="topFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="iconSocial d-flex justify-content-start border-right">
+                        <a class="mr-3" href="#"><span><i class="fab fa-facebook-f"></i></span></a>
+                        <a class="mr-3" href="#"><span><i class="fab fa-twitter"></i></span></a>
+                        <a class="mr-3" href="#"><span><i class="fas fa-camera-retro"></i></span></a>
+                        <a href="#"><span><i class="fab fa-pinterest-p"></i></span></a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div class="loginMail d-flex justify-content-between">
+                        <div class="textLog">
+                            <h3 class="philosopher mt-3 text-body">Hãy tận hưởng kỳ nghỉ của bạn!</h3>
+                        </div>
+                        <div class="btnLogmail btnPayments d-flex justify-content-between">
+                            <a href="#"><i class="fab fa-cc-visa"></i></a>
+                            <a href="#"><i class="fab fa-cc-mastercard"></i></a>
+                            <a href="#"><i class="fab fa-cc-paypal"></i></a>
+                            <a href="#"><i class="fab fa-cc-discover"></i></a>
+                            <a href="#"><i class="fab fa-cc-diners-club"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footerList">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="logoFooter">
+                        <a href="#"><img src="img/logo.png" alt="VinaWINE" class="img-fluid" /></a>
+                    </div>
+                    <div class="footerBody mt-5">
+                        <p class="footerContent text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus sagittis lobortis.
+                            Curabitur
+                            mattis risus enim, a finibus risus cursus a. Vestibulum interdum ultricies sapien, in
+                            interdum
+                            ....
+                        </p>
+                        <p class="address">
+                            <span><i class="fas fa-map-marker-alt"></i></span>
+                            <strong>Địa chỉ</strong> :
+                            Tan Minh, Soc Son, Ha Noi
+                        </p>
+                        <p class="hotMail">
+                            <span><i class="fas fa-envelope"></i></span>
+                            <strong>Mail</strong> :
+                            dobatruongbk48@gmail.com
+                        </p>
+                        <p class="hotLine">
+                            <span><i class="fas fa-phone-alt"></i></span>
+                            <strong>Sđt</strong> :
+                            09 88 04 16 15
+                        </p>
+                        <p class="openStore">
+                            <span><i class="fas fa-clock"></i></span>
+                            <strong>Mở cửa</strong> :
+                            Thứ 2 - Thứ 7, từ 8h đến 20h
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="information">
+                        <h6>THÔNG TIN</h6>
+                        <li class="footerItem">
+                            <a href="#">Về Chúng Tôi</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Thông Tin Vận Chuyển</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Chính Sách & Bảo Mật</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Điều Khoản & Điều Kiện</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Nhà Sản Xuất</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="myAccount">
+                        <h6>TÀI KHOẢN</h6>
+                        <li class="footerItem">
+                            <a href="#">Theo Dõi Đơn Hàng</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Giỏ Hàng</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Thanh Toán</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Danh Sách Yêu Thích</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="ourService">
+                        <h6>DỊCH VỤ</h6>
+                        <li class="footerItem">
+                            <a href="#">Đơn Hàng Trả Lại</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Cụm Từ Tìm Kiếm</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Tìm Kiếm Nâng Cao</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Liên Kết</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Bán Sỉ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="payments">
+                        <h6>THANH TOÁN</h6>
+                        <li class="d-flex justify-content-start footerItem">
+                            <a class="payMethods" href="#"><i class="fab fa-cc-paypal"></i></a>
+                            <a class="payMethods" href="#"><i class="fab fa-cc-mastercard"></i></a>
+                        </li>
+                        <li class="d-flex justify-content-start footerItem">
+                            <a class="payMethods" href="#"><i class="fab fa-cc-visa"></i></a>
+                            <a class="payMethods" href="#"><i class="fab fa-cc-discover"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        Copyrights &copy; DoBaTruong. All Rights Reserved
+    </div>
+</body>
+
+</html>

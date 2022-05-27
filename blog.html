@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VinaWine | Blog</title>
+
+    <!-- Links Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Charmonman&family=Philosopher:wght@400;700&family=Poppins:wght@100;400;700&display=swap" />
+
+    <!-- Links CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" href="admin/css/bootstrap-table.css">
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/shop.css" />
+    <link rel="stylesheet" href="css/blog.css" />
+
+    <!-- Links Javascript -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header" class="bg-front">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-12">
+                    <div id="logo">
+                        <a href="#">
+                            <img src="img/logo.png" alt="LogoVinaWine" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div id="menu">
+                        <ul class="liHide d-flex justify-content-end">
+                            <li class="menu-item"><a class="buttonNav" href="#">Trang chủ</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Cửa hàng</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Bài viết</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Về chúng tôi</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Liên hệ</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Hỏi đáp</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-12 p-0 d-flex justify-content-end">
+                    <div id="searchBox" class="w-50 text-center">
+                        <form action="#" method="post">
+                            <span onclick="clickShow()">
+                                <i class="text-body buttonHover fa fa-search"></i>
+                                <script>
+                                    function clickShow() {
+                                        var x = document.getElementById('searchAct').style.visibility = 'visible';
+                                    }
+                                </script>
+                            </span>
+                            <div id="searchAct" class="d-flex justify-content-end">
+                                <input class="form-control" type="search" name="keyword" placeholder="Tìm kiếm....." />
+                                <button class="btn ml-2" type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="cartNotify" class="w-50 text-center">
+                        <a href="#" class="text-body buttonHover"><i class="fa fa-shopping-cart"></i>
+                            <span>1</span></a>
+                        <div class="cartNew bg-white p-3">
+                            <h5 class="philosopher text-justify">Giỏ hàng của bạn:</h5>
+                            <hr />
+                            <table>
+                                <tr class="border-bottom">
+                                    <td class="text-justify">Vescovo Pinot Grigio</td>
+                                    <td><img src="img/product-1.png" alt="VinaWine-Cart" class="w-50" /></td>
+                                    <td>x 2</td>
+                                    <td>
+                                        200,000 vnd
+                                        <span class="btn bg-white d-block border philosopher buttonHover">xóa</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-0 pt-3"><a href="#" class="btn-primary">Xem giỏ hàng</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="textHeader text-center w-100 mt-10">
+                    <h2 class="philosopher text-body">VINAWINE STORE</h2>
+                </div>
+                <ol class="breadcrumb d-flex justify-content-center bg-transparent w-100">
+                    <li class="breadcrumb-item"><a href="#" class="textHeader">Trang chủ</a></li>
+                    <li class="breadcrumb-item textHeader philosopher active" aria-current="page"
+                        style="color: #beb7b7 !important;">Blog</li>
+                </ol>
+            </div>
+            <div class="bgHeader">
+                <img src="img/bg-4.png" alt="VinaWINE Background" class="h-100 w-100">
+            </div>
+        </div>
+    </div>
+    <!-- Main -->
+    <div id="main">
+        <div class="container">
+            <div class="row mtb-100">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div id="sidebar">
+                        <div id="filter">
+                            <h4 class="philosopher">LỌC BẰNG GIÁ</h4>
+                            <div id="rangeFilter" class="w-100 mt-3">
+                                <div id="drawRange" class="ml-1"></div>
+                                <div class="showRange philosopher d-flex justify-content-between mt-4">
+                                    Giá: <input type="text" id="amount" readonly style="border: 0;" />
+                                    <input class="btnFilter" type="submit" name="sbmFilter" value="Lọc" />
+                                </div>
+                            </div>
+                            <script>
+                                // Range filter - gravity forms
+                                $(function () {
+                                    $("#drawRange").slider({
+                                        range: true,
+                                        min: 1500,
+                                        max: 10000,
+                                        step: 0.5,
+                                        values: [3000, 6000],
+                                        slide: function (event, ui) {
+                                            $("#amount").val("$" + ui.values[0] + " - $" + ui
+                                                .values[1]);
+                                        }
+                                    });
+                                    $("#amount").val("$" + $("#drawRange").slider("values", 0) +
+                                        " - $" + $("#drawRange").slider("values", 1));
+                                });
+                                $(function () {
+                                    $("#drawRange")
+                                        .slider({
+                                            range: true,
+                                            min: 0,
+                                            max: 1000,
+                                            values: [0, 500],
+                                            slide: function (event, ui) {
+                                                $("#amount")
+                                                    .val("$" + ui.values[0] + " - $" + ui.values[1]);
+                                            }
+                                        });
+                                    $("#amount")
+                                        .val("$" + $("#drawRange")
+                                            .slider("values", 0) +
+                                            " - $" + $("#drawRange")
+                                            .slider("values", 1));
+                                });
+                            </script>
+                        </div>
+                        <div id="catFilter">
+                            <h4 class="philosopher mb-3 mt-4">DANH MỤC</h4>
+                            <ul class="catFilterMenu">
+                                <li class="pb-3">
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <div><i>Rose'</i></div>
+                                        <div class="philosopher">(10)</div>
+                                    </a>
+                                    <ul class="catMenuSub ml-4">
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>Red Wine</i></div>
+                                                <div>(4)</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>White Wine</i></div>
+                                                <div>(6)</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pb-3">
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <div><i>Kosher</i></div>
+                                        <div>(15)</div>
+                                    </a>
+                                    <ul class="catMenuSub ml-4">
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>Red Wine</i></div>
+                                                <div>(4)</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>White Wine</i></div>
+                                                <div>(6)</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pb-3">
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <div><i>Whisky</i></div>
+                                        <div>(10)</div>
+                                    </a>
+                                    <ul class="catMenuSub ml-4">
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>Red Wine</i></div>
+                                                <div>(4)</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>White Wine</i></div>
+                                                <div>(6)</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pb-3">
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <div><i>Champages</i></div>
+                                        <div>(12)</div>
+                                    </a>
+                                    <ul class="catMenuSub ml-4">
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>Red Wine</i></div>
+                                                <div>(4)</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>White Wine</i></div>
+                                                <div>(6)</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pb-3">
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <div><i>Khác</i></div>
+                                        <div>(20)</div>
+                                    </a>
+                                    <ul class="catMenuSub ml-4">
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>Red Wine</i></div>
+                                                <div>(4)</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>White Wine</i></div>
+                                                <div>(6)</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="sidebarSearch">
+                            <h4 class="mt-5 mb-4 philosopher">TÌM KIẾM</h4>
+                            <div class="border-top border-bottom p-3">
+                                <form class="w-100 d-flex justify-content-between" action="#" method="post">
+                                    <input class="border-0 sideSearch" type="search" name="sideSearch"
+                                        placeholder="Tìm kiếm...." />
+                                    <button class="border-0 bg-transparent" type="submit"><i
+                                            class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="prdTags">
+                            <h4 class="mt-4 philosopher mb-3">THẺ SẢN PHẨM</h4>
+                            <div class="mb-3 w-100">
+                                <a href="#">Red Wine</a>
+                                <a href="#">Ravenswood</a>
+                                <a href="#">Wine Sale</a>
+                                <a href="#">Rancho Zabaco</a>
+                                <a href="#">Red Wine</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div id="showBlog">
+                        <div class="row">
+                            <div class="col-5 p-0">
+                                <a href="#">
+                                    <img src="img/vinawine-14.png" alt="VinaWINE Blog" class="h-100 w-100" />
+                                </a>
+                            </div>
+                            <div class="col-7 pl-4 text-justify">
+                                <a href="#">
+                                    <h4 class="philosopher text-dark">Varietal Labelling Of New World Wines</h4>
+                                </a>
+                                <p class="philosopher pl-4 text-muted size-11">By BaTruong. January 25, 2021</p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices purus
+                                    urna. Pellentesque nec tincidunt nulla, sit amet euismod magna. Mauris id arcu
+                                    nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                </p>
+                                <div class="blogButton d-flex justify-content-between w-100 pl-4 pr-3">
+                                    <div>
+                                        <a class="text-pink font-700" href="#">&laquo; READ MORE</a>
+                                    </div>
+                                    <div class="d-flex">
+                                        <a href="#"><i class="fas fa-eye"></i><span>20</span></a>
+                                        <a href="#"><i class="far fa-comment"></i><span>20</span></a>
+                                        <a href="#"><i class="far fa-heart"></i><span>20</span></a>
+                                        <a href="#"><i class="fas fa-share-alt"></i><span class="pr-0">20</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row p-3">
+                            <div id="pagination" class="mt-5 w-100">
+                                <ul class="pagination d-flex justify-content-end">
+                                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div id="topFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="iconSocial d-flex justify-content-start border-right">
+                        <a class="mr-3" href="#"><span><i class="fab fa-facebook-f"></i></span></a>
+                        <a class="mr-3" href="#"><span><i class="fab fa-twitter"></i></span></a>
+                        <a class="mr-3" href="#"><span><i class="fas fa-camera-retro"></i></span></a>
+                        <a href="#"><span><i class="fab fa-pinterest-p"></i></span></a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div class="loginMail d-flex justify-content-between">
+                        <div class="textLog">
+                            <h3 class="philosopher mt-3 text-body">Hãy tận hưởng kỳ nghỉ của bạn!</h3>
+                        </div>
+                        <div class="btnLogmail btnPayments d-flex justify-content-between">
+                            <a href="#"><i class="fab fa-cc-visa"></i></a>
+                            <a href="#"><i class="fab fa-cc-mastercard"></i></a>
+                            <a href="#"><i class="fab fa-cc-paypal"></i></a>
+                            <a href="#"><i class="fab fa-cc-discover"></i></a>
+                            <a href="#"><i class="fab fa-cc-diners-club"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footerList">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="logoFooter">
+                        <a href="#"><img src="img/logo.png" alt="VinaWINE" class="img-fluid" /></a>
+                    </div>
+                    <div class="footerBody mt-5">
+                        <p class="footerContent text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus sagittis lobortis.
+                            Curabitur
+                            mattis risus enim, a finibus risus cursus a. Vestibulum interdum ultricies sapien, in
+                            interdum
+                            ....
+                        </p>
+                        <p class="address">
+                            <span><i class="fas fa-map-marker-alt"></i></span>
+                            <strong>Địa chỉ</strong> :
+                            Tan Minh, Soc Son, Ha Noi
+                        </p>
+                        <p class="hotMail">
+                            <span><i class="fas fa-envelope"></i></span>
+                            <strong>Mail</strong> :
+                            dobatruongbk48@gmail.com
+                        </p>
+                        <p class="hotLine">
+                            <span><i class="fas fa-phone-alt"></i></span>
+                            <strong>Sđt</strong> :
+                            09 88 04 16 15
+                        </p>
+                        <p class="openStore">
+                            <span><i class="fas fa-clock"></i></span>
+                            <strong>Mở cửa</strong> :
+                            Thứ 2 - Thứ 7, từ 8h đến 20h
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="information">
+                        <h6>THÔNG TIN</h6>
+                        <li class="footerItem">
+                            <a href="#">Về Chúng Tôi</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Thông Tin Vận Chuyển</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Chính Sách & Bảo Mật</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Điều Khoản & Điều Kiện</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Nhà Sản Xuất</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="myAccount">
+                        <h6>TÀI KHOẢN</h6>
+                        <li class="footerItem">
+                            <a href="#">Theo Dõi Đơn Hàng</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Giỏ Hàng</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Thanh Toán</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Danh Sách Yêu Thích</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="ourService">
+                        <h6>DỊCH VỤ</h6>
+                        <li class="footerItem">
+                            <a href="#">Đơn Hàng Trả Lại</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Cụm Từ Tìm Kiếm</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Tìm Kiếm Nâng Cao</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Liên Kết</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Bán Sỉ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="payments">
+                        <h6>THANH TOÁN</h6>
+                        <li class="d-flex justify-content-start footerItem">
+                            <a class="payMethods" href="#"><i class="fab fa-cc-paypal"></i></a>
+                            <a class="payMethods" href="#"><i class="fab fa-cc-mastercard"></i></a>
+                        </li>
+                        <li class="d-flex justify-content-start footerItem">
+                            <a class="payMethods" href="#"><i class="fab fa-cc-visa"></i></a>
+                            <a class="payMethods" href="#"><i class="fab fa-cc-discover"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        Copyrights &copy; DoBaTruong. All Rights Reserved
+    </div>
+</body>
+
+</html>

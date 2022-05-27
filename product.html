@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VinaWine | Mô tả sản phẩm</title>
+
+    <!-- Links Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Charmonman&family=Philosopher:wght@400;700&family=Poppins:wght@100;400;700&display=swap" />
+
+    <!-- Links CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" href="admin/css/bootstrap-table.css">
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/shop.css" />
+
+    <!-- Links Javascript -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header" class="bg-front">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-12">
+                    <div id="logo">
+                        <a href="#">
+                            <img src="img/logo.png" alt="LogoVinaWine" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div id="menu">
+                        <ul class="liHide d-flex justify-content-end">
+                            <li class="menu-item"><a class="buttonNav" href="#">Trang chủ</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Cửa hàng</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Bài viết</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Về chúng tôi</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Liên hệ</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Hỏi đáp</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-12 p-0 d-flex justify-content-end">
+                    <div id="searchBox" class="w-50 text-center">
+                        <form action="#" method="post">
+                            <span onclick="clickShow()">
+                                <i class="text-body buttonHover fa fa-search"></i>
+                                <script>
+                                    function clickShow() {
+                                        var x = document.getElementById('searchAct').style.visibility = 'visible';
+                                    }
+                                </script>
+                            </span>
+                            <div id="searchAct" class="d-flex justify-content-end">
+                                <input class="form-control" type="search" name="keyword" placeholder="Tìm kiếm....." />
+                                <button class="btn ml-2" type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="cartNotify" class="w-50 text-center">
+                        <a href="#" class="text-body buttonHover"><i class="fa fa-shopping-cart"></i>
+                            <span>1</span></a>
+                        <div class="cartNew bg-white p-3">
+                            <h5 class="philosopher text-justify">Giỏ hàng của bạn:</h5>
+                            <hr />
+                            <table>
+                                <tr class="border-bottom">
+                                    <td class="text-justify">Vescovo Pinot Grigio</td>
+                                    <td><img src="img/product-1.png" alt="VinaWine-Cart" class="w-50" /></td>
+                                    <td>x 2</td>
+                                    <td>
+                                        200,000 vnd
+                                        <span class="btn bg-white d-block border philosopher buttonHover">xóa</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-0 pt-3"><a href="#" class="btn-primary">Xem giỏ hàng</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="textHeader text-center w-100 mt-10">
+                    <h2 class="philosopher text-body">VINAWINE STORE</h2>
+                </div>
+                <ol class="breadcrumb d-flex justify-content-center bg-transparent w-100">
+                    <li class="breadcrumb-item"><a href="#" class="textHeader">Trang chủ</a></li>
+                    <li class="breadcrumb-item textHeader philosopher active" aria-current="page"
+                        style="color: #beb7b7 !important;">Cửa hàng</li>
+                </ol>
+            </div>
+            <div class="bgHeader">
+                <img src="img/bg-2.png" alt="VinaWINE Background" class="h-100 w-100">
+            </div>
+        </div>
+    </div>
+    <!-- Main -->
+    <div id="main">
+        <div class="container">
+            <div class="row mtb-100">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div id="sidebar">
+                        <div id="filter">
+                            <h4 class="philosopher">LỌC BẰNG GIÁ</h4>
+                            <div id="rangeFilter" class="w-100 mt-3">
+                                <div id="drawRange" class="ml-1 "></div>
+
+                                <div class="showRange philosopher d-flex justify-content-between mt-4">
+                                    Giá: <input type="text" id="amount" readonly style="border: 0;" />
+                                    <input class="btnFilter" type="submit" name="sbmFilter" value="Lọc" />
+                                </div>
+                            </div>
+                            <script>
+                                // Range filter - gravity forms
+                                $(function () {
+                                    $("#drawRange").slider({
+                                        range: true,
+                                        min: 1500,
+                                        max: 10000,
+                                        step: 0.5,
+                                        values: [3000, 6000],
+                                        slide: function (event, ui) {
+                                            $("#amount").val("$" + ui.values[0] + " - $" + ui
+                                                .values[1]);
+                                        }
+                                    });
+                                    $("#amount").val("$" + $("#drawRange").slider("values", 0) +
+                                        " - $" + $("#drawRange").slider("values", 1));
+                                });
+                                $(function () {
+                                    $("#drawRange")
+                                        .slider({
+                                            range: true,
+                                            min: 0,
+                                            max: 1000,
+                                            values: [0, 500],
+                                            slide: function (event, ui) {
+                                                $("#amount")
+                                                    .val("$" + ui.values[0] + " - $" + ui.values[1]);
+                                            }
+                                        });
+                                    $("#amount")
+                                        .val("$" + $("#drawRange")
+                                            .slider("values", 0) +
+                                            " - $" + $("#drawRange")
+                                            .slider("values", 1));
+                                });
+                            </script>
+                        </div>
+                        <div id="catFilter">
+                            <h4 class="philosopher mb-3 mt-4">DANH MỤC</h4>
+                            <ul class="catFilterMenu">
+                                <li class="pb-3">
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <div><i>Rose'</i></div>
+                                        <div class="philosopher">(10)</div>
+                                    </a>
+                                    <ul class="catMenuSub ml-4">
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>Red Wine</i></div>
+                                                <div>(4)</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>White Wine</i></div>
+                                                <div>(6)</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pb-3">
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <div><i>Kosher</i></div>
+                                        <div>(15)</div>
+                                    </a>
+                                    <ul class="catMenuSub ml-4">
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>Red Wine</i></div>
+                                                <div>(4)</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>White Wine</i></div>
+                                                <div>(6)</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pb-3">
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <div><i>Whisky</i></div>
+                                        <div>(10)</div>
+                                    </a>
+                                    <ul class="catMenuSub ml-4">
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>Red Wine</i></div>
+                                                <div>(4)</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>White Wine</i></div>
+                                                <div>(6)</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pb-3">
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <div><i>Champages</i></div>
+                                        <div>(12)</div>
+                                    </a>
+                                    <ul class="catMenuSub ml-4">
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>Red Wine</i></div>
+                                                <div>(4)</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>White Wine</i></div>
+                                                <div>(6)</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pb-3">
+                                    <a href="#" class="d-flex justify-content-between">
+                                        <div><i>Khác</i></div>
+                                        <div>(20)</div>
+                                    </a>
+                                    <ul class="catMenuSub ml-4">
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>Red Wine</i></div>
+                                                <div>(4)</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="d-flex justify-content-between">
+                                                <div><i>White Wine</i></div>
+                                                <div>(6)</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="prdHot">
+                            <h4 class="philosopher mb-3 mt-4">SẢN PHẨM NỔI BẬT</h4>
+                            <a href="#" class="w-100 mb-3 d-flex">
+                                <div class="card bg-img w-30">
+                                    <img src="img/product-1.png" alt="VinaWINE Product" class="w-50" />
+                                </div>
+                                <div class="text-center w-70">
+                                    <span>Vescovo Pinot Grigio</span>
+                                    <p class="philosopher text-pink font-700">$ 166.00</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div id="prdTags">
+                            <h4 class="mt-4 philosopher mb-3">THẺ SẢN PHẨM</h4>
+                            <div class="mb-3 w-100">
+                                <a href="#">Red Wine</a>
+                                <a href="#">Ravenswood</a>
+                                <a href="#">Wine Sale</a>
+                                <a href="#">Rancho Zabaco</a>
+                                <a href="#">Red Wine</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div id="showProduct">
+                        <div class="row pl-3">
+                            <div class="card prdItem text-center">
+                                <a href="#" class="bg-img w-40">
+                                    <img style="height: 30rem;" src="img/product-9.png" alt="VinaWINE Product"
+                                        class="img-fluid" />
+                                </a>
+                                <div class="prdInfo w-60 pl-4 text-justify">
+                                    <a href="#">
+                                        <div class="text-dark size-18">Vescovo Pinot Grigio</div>
+                                    </a>
+                                    <div class="prdRating pb-3 d-flex justify-content-start">
+                                        <div class="ratingItem">
+                                            <span class="fa fa-star-half checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <div class="ratingItem">
+                                            <span class="fa fa-star-half checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <div class="ratingItem">
+                                            <span class="fa fa-star-half checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <div class="ratingItem">
+                                            <span class="fa fa-star-half checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <div class="ratingItem">
+                                            <span class="fa fa-star-half checked"></span>
+                                            <span class="fa fa-star"></span>
+                                        </div>
+                                    </div>
+                                    <div class="size-18 text-pink philosopher font-700">$ 166.00 <span
+                                            class="prdPrice ml-3 philosopher size-18 font-700">$ 280.00</span></div>
+                                    <p class="prdDetails mt-2">
+                                        Lorem ipsum dolor sit amet,
+                                        consectetur
+                                        adipiscing elit. Curabitur vulputate
+                                        dapibus libero, ac pretium tortor sagittis in. Nunc placerat
+                                        volutpat
+                                        purus,
+                                        vestibulum ornare tortor luctus at.
+                                    </p>
+                                    <div class="d-flex pl-4 prdOrder">
+                                        <div class="btnProQty mr-5 d-flex justify-content-between p-0">
+                                            <button
+                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"><i
+                                                    class="fa fa-minus"></i></button>
+                                            <input class="quantity philosopher size-18 text-center" min="0"
+                                                name="quantity" value="1" type="number">
+                                            <button
+                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
+                                                    class="fa fa-plus"></i></button>
+                                        </div>
+                                        <div class="btnProItem rounded-circle">
+                                            <a href="#" class="d-flex">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </a>
+                                        </div>
+                                        <div class="btnProItem rounded-circle">
+                                            <a href="#!" type="button"><i class="far fa-heart"></i></a>
+                                        </div>
+                                        <div class="btnProItem rounded-circle">
+                                            <input class="fa fa-sync-alt" type="reset" name="heart" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pl-3 mt-5">
+                            <div id="commProduct">
+                                <div class="nav navTabs" id="navTab" role="tablist">
+                                    <a class="tabLink rounded-top border p-3" id="navdescripContent" data-toggle="tab"
+                                        href="#descripContent" role="tab" aria-controls="descripContent"
+                                        aria-selected="true">
+                                        <h6>CHI TIẾT</h6>
+                                    </a>
+                                    <a class="tabLink rounded-top p-3 border active" id="navaddComment"
+                                        data-toggle="tab" href="#addComment" role="tab" aria-controls="addComment"
+                                        aria-selected="false">
+                                        <h6>NHẬN XÉT (0)</h6>
+                                    </a>
+                                </div>
+                                <div class="tabContent border-top text-justify pt-3" id="navTabContent">
+                                    <div class="tab-pane fade" id="descripContent" role="tabpanel"
+                                        aria-labelledby="nav-description-tab">
+                                        <p class="prdDetails"> Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit. Integer ultrices purus urna. Pellentesque nec tincidunt
+                                            nulla,
+                                            sit amet euismod magna. Mauris id arcu nulla. Interdum et malesuada fames ac
+                                            ante ipsum primis in faucibus.
+                                        </p>
+                                        <p class="prdDetails"> Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit. Integer ultrices purus urna. Pellentesque nec tincidunt
+                                            nulla,
+                                            sit amet euismod magna. Mauris id arcu nulla. Interdum et malesuada fames ac
+                                            ante ipsum primis in faucibus.
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade active show" id="addComment" role="tabpanel"
+                                        aria-labelledby="nav-review-tab">
+                                        <h3 class="text-center philosopher">2 KHÁCH HÀNG ĐÁNH GIÁ</h3>
+                                        <hr />
+                                        <div class="feedbackProduct p-3 pt-5 w-100 bg-img">
+                                            <label for="prdFeadback">
+                                                <h6>Ý KIẾN CỦA BẠN VỀ SẢN PHẨM</h6>
+                                            </label> <br />
+                                            <form action="#" method="post">
+                                                <textarea name="prdFeadback" id="prdFeadback" rows="10"
+                                                    class="w-100"></textarea>
+                                                <script>
+                                                    CKEDITOR.replace('prdFeadback');
+                                                </script>
+                                                <label for="starsRatingProDuct">
+                                                    <h6 class="mt-5">ĐÁNH GIÁ CỦA BẠN</h6>
+                                                </label>
+                                                <div id="starsRatingProDuct" class="ratingProduct">
+                                                    <div class="ratingGroup">
+                                                        <input class="rating_input rating_input-none" checked=""
+                                                            name="rating2" id="rating2-0" value="0" type="radio">
+                                                        <label aria-label="0 stars" class="rating_label"
+                                                            for="rating2-0">&nbsp;</label>
+                                                        <label aria-label="0.5 stars"
+                                                            class="rating_label rating_label-half" for="rating2-05"><i
+                                                                class="rating_icon rating_icon-star fa fa-star-half"></i></label>
+                                                        <input class="rating_input" name="rating2" id="rating2-05"
+                                                            value="0.5" type="radio">
+                                                        <label aria-label="1 star" class="rating_label"
+                                                            for="rating2-10"><i
+                                                                class="rating_icon rating_icon-star fa fa-star"></i></label>
+                                                        <input class="rating_input" name="rating2" id="rating2-10"
+                                                            value="1" type="radio">
+                                                        <label aria-label="1.5 stars"
+                                                            class="rating_label rating_label-half" for="rating2-15"><i
+                                                                class="rating_icon rating_icon-star fa fa-star-half"></i></label>
+                                                        <input class="rating_input" name="rating2" id="rating2-15"
+                                                            value="1.5" type="radio">
+                                                        <label aria-label="2 stars" class="rating_label"
+                                                            for="rating2-20"><i
+                                                                class="rating_icon rating_icon-star fa fa-star"></i></label>
+                                                        <input class="rating_input" name="rating2" id="rating2-20"
+                                                            value="2" type="radio">
+                                                        <label aria-label="2.5 stars"
+                                                            class="rating_label rating_label-half" for="rating2-25"><i
+                                                                class="rating_icon rating_icon-star fa fa-star-half"></i></label>
+                                                        <input class="rating_input" name="rating2" id="rating2-25"
+                                                            value="2.5" type="radio" checked="">
+                                                        <label aria-label="3 stars" class="rating_label"
+                                                            for="rating2-30"><i
+                                                                class="rating_icon rating_icon-star fa fa-star"></i></label>
+                                                        <input class="rating_input" name="rating2" id="rating2-30"
+                                                            value="3" type="radio">
+                                                        <label aria-label="3.5 stars"
+                                                            class="rating_label rating_label-half" for="rating2-35"><i
+                                                                class="rating_icon rating_icon-star fa fa-star-half"></i></label>
+                                                        <input class="rating_input" name="rating2" id="rating2-35"
+                                                            value="3.5" type="radio">
+                                                        <label aria-label="4 stars" class="rating_label"
+                                                            for="rating2-40"><i
+                                                                class="rating_icon rating_icon-star fa fa-star"></i></label>
+                                                        <input class="rating_input" name="rating2" id="rating2-40"
+                                                            value="4" type="radio">
+                                                        <label aria-label="4.5 stars"
+                                                            class="rating_label rating_label-half" for="rating2-45"><i
+                                                                class="rating_icon rating_icon-star fa fa-star-half"></i></label>
+                                                        <input class="rating_input" name="rating2" id="rating2-45"
+                                                            value="4.5" type="radio">
+                                                        <label aria-label="5 stars" class="rating_label"
+                                                            for="rating2-50"><i
+                                                                class="rating_icon rating_icon-star fa fa-star"></i></label>
+                                                        <input class="rating_input" name="rating2" id="rating2-50"
+                                                            value="5" type="radio">
+                                                    </div>
+                                                </div>
+                                                <input type="email" name="mailfead" class="form-control nameFeadback"
+                                                    placeholder="Họ và Tên:...." />
+                                                <input type="text" name="namefead" class="form-control"
+                                                    placeholder="Email:...." />
+                                                <div class="mt-5 w-100 d-flex justify-content-center">
+                                                    <input class="submitFeedback" type="submit" value="GỬI NHẬN XÉT"
+                                                        name="sbm-feedback" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="commFeedback mt-5">
+                                            <div class="commFeedItem border-top">
+                                                <div class="prdRating d-flex justify-content-start">
+                                                    <div class="ratingItem">
+                                                        <span class="fa fa-star-half checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="ratingItem">
+                                                        <span class="fa fa-star-half checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="ratingItem">
+                                                        <span class="fa fa-star-half checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="ratingItem">
+                                                        <span class="fa fa-star-half checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="ratingItem">
+                                                        <span class="fa fa-star-half checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                </div>
+                                                <p class="philosopher">Từ: <span class="text-pink">Đinh Hồng</span>
+                                                    Ngày: <span class="text-pink">28 Tháng 8 Năm 2020</span></p>
+                                                Khá ổn trong tầm giá
+                                                <p class="d-flex justify-content-end mt-3">
+                                                    <i class="fas fa-thumbs-up"></i>
+                                                    <i class="fa fa-heart ml-3"></i>
+                                                    <i class="fa fa-reply ml-3"></i>
+                                                </p>
+                                            </div>
+                                            <div class="commFeedItem border-top">
+                                                <div class="prdRating d-flex justify-content-start">
+                                                    <div class="ratingItem">
+                                                        <span class="fa fa-star-half checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="ratingItem">
+                                                        <span class="fa fa-star-half checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="ratingItem">
+                                                        <span class="fa fa-star-half checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="ratingItem">
+                                                        <span class="fa fa-star-half checked"></span>
+                                                        <span class="fa fa-star checked"></span>
+                                                    </div>
+                                                    <div class="ratingItem">
+                                                        <span class="fa fa-star-half checked"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                </div>
+                                                <p class="philosopher">Từ: <span class="text-pink">Đinh Hồng</span>
+                                                    Ngày: <span class="text-pink">28 Tháng 8 Năm 2020</span></p>
+                                                Khá ổn trong tầm giá
+                                                <p class="d-flex justify-content-end mt-3">
+                                                    <i class="fas fa-thumbs-up"></i>
+                                                    <i class="fa fa-heart ml-3"></i>
+                                                    <i class="fa fa-reply ml-3"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row border-bottom">
+                            <div id="pagination" class="w-100">
+                                <ul class="pagination d-flex justify-content-end">
+                                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="prdRelated">
+                        <label class="mt-3" for="prdRelated">
+                            <h4 class="philosopher">SẢN PHẨM VỪA XEM</h4>
+                        </label> <br />
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="card prdItem text-center">
+                                    <a href="#" class="h-80 pt-4 bg-img">
+                                        <img src="img/product-9.png" alt="VinaWINE Product" class="img-fluid" />
+                                        <div class="prdRating pb-3 d-flex justify-content-center">
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="buttonDrop">
+                                        <a onclick="myClick()"><span><i class="fa fa-arrows-alt"></i></span></a>
+                                    </div>
+                                    <div class="prdInfo border-top p-3">
+                                        <a href="#">
+                                            <div class="text-dark size-18">Vescovo Pinot Grigio</div>
+                                            <div class="size-18 text-pink philosopher font-700">$ 166.00 <span
+                                                    class="prdPrice ml-3 philosopher size-18 font-700">$ 280.00</span>
+                                            </div>
+                                        </a>
+                                        <div id="prdOrder" class="d-flex">
+                                            <div class="btnProItem border">
+                                                <a href="#!" type="button"><i class="far fa-heart"></i></a>
+                                            </div>
+                                            <div class="btnProItem border">
+                                                <a href="#" data-name="Vescovo Pinot Grigio" data-price="166.00">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span>ADD TO CART</span>
+                                                </a>
+                                            </div>
+                                            <div class="btnProItem">
+                                                <input class="fa fa-sync-alt" type="reset" name="heart" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="card prdItem text-center">
+                                    <a href="#" class="h-80 pt-4 bg-img">
+                                        <img src="img/product-6.png" alt="VinaWINE Product" class="img-fluid" />
+                                        <div class="prdRating pb-3 d-flex justify-content-center">
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="buttonDrop">
+                                        <a onclick="myClick()"><span><i class="fa fa-arrows-alt"></i></span></a>
+                                    </div>
+                                    <div class="prdInfo border-top p-3">
+                                        <a href="#">
+                                            <div class="text-dark size-18">Vescovo Pinot Grigio</div>
+                                            <div class="size-18 text-pink philosopher font-700">$ 166.00 <span
+                                                    class="prdPrice ml-3 philosopher size-18 font-700">$ 280.00</span>
+                                            </div>
+                                        </a>
+                                        <div id="prdOrder" class="d-flex">
+                                            <div class="btnProItem border">
+                                                <a href="#!" type="button"><i class="far fa-heart"></i></a>
+                                            </div>
+                                            <div class="btnProItem border">
+                                                <a href="#" data-name="Vescovo Pinot Grigio" data-price="166.00">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span>ADD TO CART</span>
+                                                </a>
+                                            </div>
+                                            <div class="btnProItem">
+                                                <input class="fa fa-sync-alt" type="reset" name="heart" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="card prdItem text-center">
+                                    <a href="#" class="h-80 pt-4 bg-img">
+                                        <img src="img/product-8.png" alt="VinaWINE Product" class="img-fluid" />
+                                        <div class="prdRating pb-3 d-flex justify-content-center">
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <div class="ratingItem">
+                                                <span class="fa fa-star-half checked"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="buttonDrop">
+                                        <a onclick="myClick()"><span><i class="fa fa-arrows-alt"></i></span></a>
+                                    </div>
+                                    <div class="prdInfo border-top p-3">
+                                        <a href="#">
+                                            <div class="text-dark size-18">Vescovo Pinot Grigio</div>
+                                            <div class="size-18 text-pink philosopher font-700">$ 166.00 <span
+                                                    class="prdPrice ml-3 philosopher size-18 font-700">$ 280.00</span>
+                                            </div>
+                                        </a>
+                                        <div id="prdOrder" class="d-flex">
+                                            <div class="btnProItem border">
+                                                <a href="#!" type="button"><i class="far fa-heart"></i></a>
+                                            </div>
+                                            <div class="btnProItem border">
+                                                <a href="#" data-name="Vescovo Pinot Grigio" data-price="166.00">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    <span>ADD TO CART</span>
+                                                </a>
+                                            </div>
+                                            <div class="btnProItem">
+                                                <input class="fa fa-sync-alt" type="reset" name="heart" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div id="topFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="iconSocial d-flex justify-content-start border-right">
+                        <a class="mr-3" href="#"><span><i class="fab fa-facebook-f"></i></span></a>
+                        <a class="mr-3" href="#"><span><i class="fab fa-twitter"></i></span></a>
+                        <a class="mr-3" href="#"><span><i class="fas fa-camera-retro"></i></span></a>
+                        <a href="#"><span><i class="fab fa-pinterest-p"></i></span></a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div class="loginMail d-flex justify-content-between">
+                        <div class="textLog">
+                            <h3 class="philosopher mt-3 text-body">Hãy tận hưởng kỳ nghỉ của bạn!</h3>
+                        </div>
+                        <div class="btnLogmail btnPayments d-flex justify-content-between">
+                            <a href="#"><i class="fab fa-cc-visa"></i></a>
+                            <a href="#"><i class="fab fa-cc-mastercard"></i></a>
+                            <a href="#"><i class="fab fa-cc-paypal"></i></a>
+                            <a href="#"><i class="fab fa-cc-discover"></i></a>
+                            <a href="#"><i class="fab fa-cc-diners-club"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footerList">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="logoFooter">
+                        <a href="#"><img src="img/logo.png" alt="VinaWINE" class="img-fluid" /></a>
+                    </div>
+                    <div class="footerBody mt-5">
+                        <p class="footerContent text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus sagittis lobortis.
+                            Curabitur
+                            mattis risus enim, a finibus risus cursus a. Vestibulum interdum ultricies sapien, in
+                            interdum
+                            ....
+                        </p>
+                        <p class="address">
+                            <span><i class="fas fa-map-marker-alt"></i></span>
+                            <strong>Địa chỉ</strong> :
+                            Tan Minh, Soc Son, Ha Noi
+                        </p>
+                        <p class="hotMail">
+                            <span><i class="fas fa-envelope"></i></span>
+                            <strong>Mail</strong> :
+                            dobatruongbk48@gmail.com
+                        </p>
+                        <p class="hotLine">
+                            <span><i class="fas fa-phone-alt"></i></span>
+                            <strong>Sđt</strong> :
+                            09 88 04 16 15
+                        </p>
+                        <p class="openStore">
+                            <span><i class="fas fa-clock"></i></span>
+                            <strong>Mở cửa</strong> :
+                            Thứ 2 - Thứ 7, từ 8h đến 20h
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="information">
+                        <h6>THÔNG TIN</h6>
+                        <li class="footerItem">
+                            <a href="#">Về Chúng Tôi</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Thông Tin Vận Chuyển</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Chính Sách & Bảo Mật</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Điều Khoản & Điều Kiện</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Nhà Sản Xuất</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="myAccount">
+                        <h6>TÀI KHOẢN</h6>
+                        <li class="footerItem">
+                            <a href="#">Theo Dõi Đơn Hàng</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Giỏ Hàng</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Thanh Toán</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Danh Sách Yêu Thích</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="ourService">
+                        <h6>DỊCH VỤ</h6>
+                        <li class="footerItem">
+                            <a href="#">Đơn Hàng Trả Lại</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Cụm Từ Tìm Kiếm</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Tìm Kiếm Nâng Cao</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Liên Kết</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Bán Sỉ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="payments">
+                        <h6>THANH TOÁN</h6>
+                        <li class="d-flex justify-content-start footerItem">
+                            <a class="payMethods" href="#"><i class="fab fa-cc-paypal"></i></a>
+                            <a class="payMethods" href="#"><i class="fab fa-cc-mastercard"></i></a>
+                        </li>
+                        <li class="d-flex justify-content-start footerItem">
+                            <a class="payMethods" href="#"><i class="fab fa-cc-visa"></i></a>
+                            <a class="payMethods" href="#"><i class="fab fa-cc-discover"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        Copyrights &copy; DoBaTruong. All Rights Reserved
+    </div>
+</body>
+
+</html>

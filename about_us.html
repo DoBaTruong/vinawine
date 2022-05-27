@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VinaWine | Về chúng tôi</title>
+
+    <!-- Links Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Charmonman&family=Philosopher:wght@400;700&family=Poppins:wght@100;400;700&display=swap" />
+
+    <!-- Links CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" href="admin/css/bootstrap-table.css">
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/shop.css" />
+    <link rel="stylesheet" href="css/blog.css" />
+
+    <!-- Links Javascript -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header" class="bg-front">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-12">
+                    <div id="logo">
+                        <a href="#">
+                            <img src="img/logo.png" alt="LogoVinaWine" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div id="menu">
+                        <ul class="liHide d-flex justify-content-end">
+                            <li class="menu-item"><a class="buttonNav" href="#">Trang chủ</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Cửa hàng</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Bài viết</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Về chúng tôi</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Liên hệ</a></li>
+                            <li class="menu-item"><a class="buttonNav" href="#">Hỏi đáp</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-12 p-0 d-flex justify-content-end">
+                    <div id="searchBox" class="w-50 text-center">
+                        <form action="#" method="post">
+                            <span onclick="clickShow()">
+                                <i class="text-body buttonHover fa fa-search"></i>
+                                <script>
+                                    function clickShow() {
+                                        var x = document.getElementById('searchAct').style.visibility = 'visible';
+                                    }
+                                </script>
+                            </span>
+                            <div id="searchAct" class="d-flex justify-content-end">
+                                <input class="form-control" type="search" name="keyword" placeholder="Tìm kiếm....." />
+                                <button class="btn ml-2" type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="cartNotify" class="w-50 text-center">
+                        <a href="#" class="text-body buttonHover"><i class="fa fa-shopping-cart"></i>
+                            <span>1</span></a>
+                        <div class="cartNew bg-white p-3">
+                            <h5 class="philosopher text-justify">Giỏ hàng của bạn:</h5>
+                            <hr />
+                            <table>
+                                <tr class="border-bottom">
+                                    <td class="text-justify">Vescovo Pinot Grigio</td>
+                                    <td><img src="img/product-1.png" alt="VinaWine-Cart" class="w-50" /></td>
+                                    <td>x 2</td>
+                                    <td>
+                                        200,000 vnd
+                                        <span class="btn bg-white d-block border philosopher buttonHover">xóa</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-0 pt-3"><a href="#" class="btn-primary">Xem giỏ hàng</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="textHeader text-center w-100 mt-10">
+                    <h2 class="philosopher text-body">VINAWINE STORE</h2>
+                </div>
+                <ol class="breadcrumb d-flex justify-content-center bg-transparent w-100">
+                    <li class="breadcrumb-item"><a href="#" class="textHeader">Trang chủ</a></li>
+                    <li class="breadcrumb-item textHeader philosopher active" aria-current="page"
+                        style="color: #beb7b7 !important;">Về chúng tôi</li>
+                </ol>
+            </div>
+            <div class="bgHeader">
+                <img src="img/vinawine-4.png" alt="VinaWINE Background" class="h-100 w-100">
+            </div>
+        </div>
+    </div>
+    <!-- Main -->
+    <div id="main" class="mtb-100">
+        <div class="container">
+            <div class="row vinawineAbout">
+                <div class="col-1"></div>
+                <div class="col-6 historyUs">
+                    <h4 class="philosopher pb-3 text-pink">CHẶNG ĐƯỜNG VINAWINE</h4>
+                    <div class="w-50 border-top mb-4"></div>
+                    <p class="text-justify text-white philosopher size-11">
+                        Founded in 2006 and headquartered in Pennsauken, New Jersey, WTSO is a leading online wine
+                        platform with over 26 million bottles sold. It all began with founders Joe & Elliott Arking, who
+                        brought their wine connections into the business world to create a company that truly gave
+                        customers a unique wine experience.
+                    </p>
+                    <p class="text-justify text-white philosopher size-11">
+                        Founded in 2006 and headquartered in Pennsauken, New Jersey, WTSO is a leading online wine
+                        platform with over 26 million bottles sold. It all began with founders Joe & Elliott Arking, who
+                        brought their wine connections into the business world to create a company that truly gave
+                        customers a unique wine experience.
+                    </p>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-4 videoUs">
+                    <iframe class="w-100" height="200" src="https://www.youtube.com/embed/j7fd0kWABz4" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <h5 class="text-center pl-5 pr-5 pt-3">VINAWINE LÀM VIỆC NHƯ THẾ NÀO?</h5>
+                </div>
+            </div>
+            <div class="row d-flex mb-5 justify-content-center mb-4">
+                <div class="w-50 border-top"></div>
+            </div>
+            <div class="row text-justify">
+                <p>
+                    T WTSO quality is always key when it comes to wine delivery and sourcing. Every bottle on our
+                    online wine store is carefully selected, and each order is gently hand-packed at a
+                    temperature-controlled fulfillment center. As a valued WTSO customer you can rest assured that your
+                    wine is found, processed, packed, and delivered properly. Additionally, each bottle is backed by a
+                    100% customer satisfaction guarantee — we believe in our bottles, and we think you will too.
+                </p>
+                <p>
+                    Whether you're a beginner with wine or a trained connoisseur, WTSO's wide and ever-changing
+                    selection could be ideal for you. Find value bottles in an instant, select top Premium wines for
+                    events, visit Weekly Tasting to indulge in sommelier curated gift sets, and more as you navigate
+                    though the world of wine with WTSO.
+                </p>
+                <div class="col-12 aminateLogo">
+                    <img src="img/logo.png" alt="" />
+                </div>
+                <div class="col-12 pr-5">
+                    <img class="img-fluid" src="img/vinawine-14.jpg" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div id="topFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="iconSocial d-flex justify-content-start border-right">
+                        <a class="mr-3" href="#"><span><i class="fab fa-facebook-f"></i></span></a>
+                        <a class="mr-3" href="#"><span><i class="fab fa-twitter"></i></span></a>
+                        <a class="mr-3" href="#"><span><i class="fas fa-camera-retro"></i></span></a>
+                        <a href="#"><span><i class="fab fa-pinterest-p"></i></span></a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div class="loginMail d-flex justify-content-between">
+                        <div class="textLog">
+                            <h3 class="philosopher mt-3 text-body">Hãy tận hưởng kỳ nghỉ của bạn!</h3>
+                        </div>
+                        <div class="btnLogmail btnPayments d-flex justify-content-between">
+                            <a href="#"><i class="fab fa-cc-visa"></i></a>
+                            <a href="#"><i class="fab fa-cc-mastercard"></i></a>
+                            <a href="#"><i class="fab fa-cc-paypal"></i></a>
+                            <a href="#"><i class="fab fa-cc-discover"></i></a>
+                            <a href="#"><i class="fab fa-cc-diners-club"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footerList">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="logoFooter">
+                        <a href="#"><img src="img/logo.png" alt="VinaWINE" class="img-fluid" /></a>
+                    </div>
+                    <div class="footerBody mt-5">
+                        <p class="footerContent text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus sagittis lobortis.
+                            Curabitur
+                            mattis risus enim, a finibus risus cursus a. Vestibulum interdum ultricies sapien, in
+                            interdum
+                            ....
+                        </p>
+                        <p class="address">
+                            <span><i class="fas fa-map-marker-alt"></i></span>
+                            <strong>Địa chỉ</strong> :
+                            Tan Minh, Soc Son, Ha Noi
+                        </p>
+                        <p class="hotMail">
+                            <span><i class="fas fa-envelope"></i></span>
+                            <strong>Mail</strong> :
+                            dobatruongbk48@gmail.com
+                        </p>
+                        <p class="hotLine">
+                            <span><i class="fas fa-phone-alt"></i></span>
+                            <strong>Sđt</strong> :
+                            09 88 04 16 15
+                        </p>
+                        <p class="openStore">
+                            <span><i class="fas fa-clock"></i></span>
+                            <strong>Mở cửa</strong> :
+                            Thứ 2 - Thứ 7, từ 8h đến 20h
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="information">
+                        <h6>THÔNG TIN</h6>
+                        <li class="footerItem">
+                            <a href="#">Về Chúng Tôi</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Thông Tin Vận Chuyển</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Chính Sách & Bảo Mật</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Điều Khoản & Điều Kiện</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Nhà Sản Xuất</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="myAccount">
+                        <h6>TÀI KHOẢN</h6>
+                        <li class="footerItem">
+                            <a href="#">Theo Dõi Đơn Hàng</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Giỏ Hàng</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Thanh Toán</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Danh Sách Yêu Thích</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="ourService">
+                        <h6>DỊCH VỤ</h6>
+                        <li class="footerItem">
+                            <a href="#">Đơn Hàng Trả Lại</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Cụm Từ Tìm Kiếm</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Tìm Kiếm Nâng Cao</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Liên Kết</a>
+                        </li>
+                        <li class="footerItem">
+                            <a href="#">Bán Sỉ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <ul class="payments">
+                        <h6>THANH TOÁN</h6>
+                        <li class="d-flex justify-content-start footerItem">
+                            <a class="payMethods" href="#"><i class="fab fa-cc-paypal"></i></a>
+                            <a class="payMethods" href="#"><i class="fab fa-cc-mastercard"></i></a>
+                        </li>
+                        <li class="d-flex justify-content-start footerItem">
+                            <a class="payMethods" href="#"><i class="fab fa-cc-visa"></i></a>
+                            <a class="payMethods" href="#"><i class="fab fa-cc-discover"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        Copyrights &copy; DoBaTruong. All Rights Reserved
+    </div>
+</body>
+
+</html>
